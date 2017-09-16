@@ -1,14 +1,13 @@
 package club.wayto.todo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import club.wayto.todo.service.IndexService;
 
 
-@RestController
+@Controller
 @RequestMapping("/")
 public class IndexController {
 	
@@ -16,9 +15,7 @@ public class IndexController {
 	private IndexService indexService;
 	
 	@RequestMapping("")
-	@ResponseBody
 	public String index(){
-		indexService.index();
-		return "Hello World";
+		return "index";
 	}
 }
